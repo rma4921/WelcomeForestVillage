@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03166256-85bd-4f67-9029-3fe10a0837ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/welcome/back/users/entity/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="03166256-85bd-4f67-9029-3fe10a0837ca" name="Changes" comment="chore: typescript 버전 4.9.5로 변경">
+      <change afterPath="$PROJECT_DIR$/.gradle/8.10/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WelcomeForestVillage.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/front/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/front/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/front.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/front/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/front/package.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/front/public/favicon.ico" beforeDir="false" />
@@ -25,34 +20,13 @@
       <change beforePath="$PROJECT_DIR$/front/public/manifest.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/front/public/robots.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/App.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/App.test.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/index.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/react-app-env.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/reportWebVitals.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/setupTests.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/src/setupTests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/untitled.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/setupTests.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,24 +39,29 @@
     </projectState>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "rma4921"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;rma4921&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/rma4921/WelcomeForestVillage.git",
-    "accountId": "ed852c49-464f-4c89-951b-2cb5327edfef"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/rma4921/WelcomeForestVillage.git&quot;,
+    &quot;accountId&quot;: &quot;ed852c49-464f-4c89-951b-2cb5327edfef&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 4
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="30XREO7x3flQiUszRkS3On80HZq" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -90,9 +69,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature/init-setup",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "feature/ts-tailwind-setup",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/rmaqh/IdeaProjects/WelcomeForestVillage/front",
     "node.js.detected.package.eslint": "true",
@@ -101,16 +85,16 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "npm.dev.executor": "Run",
+    "npm.start.executor": "Run",
+    "project.structure.last.edited": "모듈",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "ts.external.directory.path": "C:\\Users\\rlawl\\IdeaProjects\\WelcomeForestVillage\\front\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JavaScript Debug.Debug Application">
-    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="npm.dev">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -127,6 +111,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/front/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.dev" />
+      <item itemvalue="Spring Boot.BackApplication" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -146,9 +144,42 @@
       <updated>1753771821167</updated>
       <workItem from="1753771821171" duration="398000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: typescript로 파일 변환">
+      <option name="closed" value="true" />
+      <created>1753886158167</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1753886158167</updated>
+    </task>
+    <task id="LOCAL-00002" summary="chore: typescript 버전 4.9.5로 변경">
+      <option name="closed" value="true" />
+      <created>1753963753115</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1753963753115</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: typescript로 파일 변환" />
+    <MESSAGE value="chore: typescript 버전 4.9.5로 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: typescript 버전 4.9.5로 변경" />
   </component>
 </project>
