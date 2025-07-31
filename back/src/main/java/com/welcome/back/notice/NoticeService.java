@@ -1,0 +1,66 @@
+package com.welcome.back.notice;
+
+import com.welcome.back.notice.domain.Notice;
+import com.welcome.back.notice.dto.AddNoticeRequestDto;
+import com.welcome.back.notice.dto.UpdateNoticeRequestDto;
+import com.welcome.back.notice.dto.NoticeResponseDto;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+import jakarta.transaction.Transactional;
+import jakarta.persistence.EntityNotFoundException;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+@RequiredArgsConstructor
+@Transactional
+public class NoticeService {
+    private final NoticeRepository noticeRepository;
+
+    // 공지 작성
+    public void addNotice(AddNoticeRequestDto dto) {
+        Notice notice = new Notice();
+        notice.setUserId(dto.getUserId());
+        notice.setTitle(dto.getTitle());
+        notice.setContent(dto.getContent());
+        notice.setIsPinned(dto.getIsPinned() != null ? dto.getIsPinned() : false);
+        notice.setCreatedAt(LocalDateTime.now());
+        notice.setUpdatedAt(LocalDateTime.now());
+        noticeRepository.save(notice);
+    }
+
+    // 공지 목록 조회
+    public List<NoticeResponseDto> getAllNotices() {
+        return noticeRepository.findAll().stream()
+                .map(n -> new NoticeResponseDto(
+                        n.getNoticeId(),
+                        n.getUserId(),
+                        n.getTitle(),
+                        n.getContent(),
+                        n.getIsPinned(),
+                        n.getCreatedAt(),
+                        n.getUpdatedAt()
+                ))
+                .collect(Collectors.toList());
+    }
+
+    // 공지 수정
+    public void updateNotice(Long id, UpdateNoticeRequestDto dto) {
+        Notice notice = noticeRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("마을 공지 존재하지 않음: " + id));
+        notice.setTitle(dto.getTitle());
+        notice.setContent(dto.getContent());
+        notice.setIsPinned(dto.getIsPinned());
+        notice.setUpdatedAt(LocalDateTime.now());
+        noticeRepository.save(notice);
+    }
+
+    // 공지 삭제
+    public void deleteNotice(Long id) {
+        if (!noticeRepository.existsById(id)) {
+            throw new EntityNotFoundException("마을 공지 존재하지 않음: " + id);
+        }
+        noticeRepository.deleteById(id);
+    }
+}
