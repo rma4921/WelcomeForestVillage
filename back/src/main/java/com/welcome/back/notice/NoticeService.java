@@ -63,4 +63,13 @@ public class NoticeService {
         }
         noticeRepository.deleteById(id);
     }
+
+    // 공지 고정
+    public void pinNotice(Long id, boolean pinned) {
+        Notice notice = noticeRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("마을 공지 존재하지 않음: " + id));
+        notice.setIsPinned(pinned);
+        notice.setUpdatedAt(LocalDateTime.now());
+        noticeRepository.save(notice);
+    }
 }

@@ -42,4 +42,14 @@ public class NoticeController {
         noticeService.deleteNotice(id);
         return ResponseEntity.noContent().build();
     }
+
+    // 공지 고정
+    @PatchMapping("/{id}")
+    public ResponseEntity<Void> pinNotice(
+            @PathVariable Long id,
+            @RequestParam("pinned") boolean pinned
+    ) {
+        noticeService.pinNotice(id, pinned);
+        return ResponseEntity.noContent().build();
+    }
 }
