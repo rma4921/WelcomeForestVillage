@@ -72,4 +72,21 @@ public class NoticeService {
         notice.setUpdatedAt(LocalDateTime.now());
         noticeRepository.save(notice);
     }
+
+    // 공지 검색
+    public List<NoticeResponseDto> searchNotices(String keyword) {
+        return noticeRepository
+                .findByTitleContainingIgnoreCaseOrContentContainingIgnoreCase(keyword, keyword)
+                .stream()
+                .map(n -> new NoticeResponseDto(
+                        n.getNoticeId(),
+                        n.getUserId(),
+                        n.getTitle(),
+                        n.getContent(),
+                        n.getIsPinned(),
+                        n.getCreatedAt(),
+                        n.getUpdatedAt()
+                ))
+                .collect(Collectors.toList());
+    }
 }

@@ -9,16 +9,22 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+// 마을 공지
 @RestController
 @RequestMapping("/notifications")
 @RequiredArgsConstructor
 public class NoticeController {
     private final NoticeService noticeService;
 
-    // 공지 목록 조회
+    // 공지 목록 조회 & 검색
     @GetMapping
-    public ResponseEntity<List<NoticeResponseDto>> listNotices() {
-        return ResponseEntity.ok(noticeService.getAllNotices());
+    public ResponseEntity<List<NoticeResponseDto>> listNotices(
+            @RequestParam(value = "search", required = false) String search
+    ) {
+        List<NoticeResponseDto> list = (search != null && !search.isBlank())
+                ? noticeService.searchNotices(search)
+                : noticeService.getAllNotices();
+        return ResponseEntity.ok(list);
     }
 
     // 공지 작성
