@@ -4,10 +4,10 @@ import com.welcome.back.notice.domain.Notice;
 import com.welcome.back.notice.dto.AddNoticeRequestDto;
 import com.welcome.back.notice.dto.UpdateNoticeRequestDto;
 import com.welcome.back.notice.dto.NoticeResponseDto;
+import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import jakarta.transaction.Transactional;
-import jakarta.persistence.EntityNotFoundException;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,23 +25,17 @@ public class NoticeService {
         notice.setTitle(dto.getTitle());
         notice.setContent(dto.getContent());
         notice.setIsPinned(dto.getIsPinned() != null ? dto.getIsPinned() : false);
+        notice.setCity(dto.getCity());
+        notice.setDistrict(dto.getDistrict());
         notice.setCreatedAt(LocalDateTime.now());
         notice.setUpdatedAt(LocalDateTime.now());
         noticeRepository.save(notice);
     }
 
-    // 공지 목록 조회
+    // 공지 전체 조회
     public List<NoticeResponseDto> getAllNotices() {
         return noticeRepository.findAll().stream()
-                .map(n -> new NoticeResponseDto(
-                        n.getNoticeId(),
-                        n.getUserId(),
-                        n.getTitle(),
-                        n.getContent(),
-                        n.getIsPinned(),
-                        n.getCreatedAt(),
-                        n.getUpdatedAt()
-                ))
+                .map(this::toDto)
                 .collect(Collectors.toList());
     }
 
@@ -52,6 +46,8 @@ public class NoticeService {
         notice.setTitle(dto.getTitle());
         notice.setContent(dto.getContent());
         notice.setIsPinned(dto.getIsPinned());
+        notice.setCity(dto.getCity());
+        notice.setDistrict(dto.getDistrict());
         notice.setUpdatedAt(LocalDateTime.now());
         noticeRepository.save(notice);
     }
@@ -78,15 +74,29 @@ public class NoticeService {
         return noticeRepository
                 .findByTitleContainingIgnoreCaseOrContentContainingIgnoreCase(keyword, keyword)
                 .stream()
-                .map(n -> new NoticeResponseDto(
-                        n.getNoticeId(),
-                        n.getUserId(),
-                        n.getTitle(),
-                        n.getContent(),
-                        n.getIsPinned(),
-                        n.getCreatedAt(),
-                        n.getUpdatedAt()
-                ))
+                .map(this::toDto)
                 .collect(Collectors.toList());
+    }
+
+    // 시+구 조회
+    public List<NoticeResponseDto> getByCityAndDistrict(String city, String district) {
+        return noticeRepository.findAllByCityAndDistrictOrderByCreatedAtDesc(city, district)
+                .stream()
+                .map(this::toDto)
+                .collect(Collectors.toList());
+    }
+
+    private NoticeResponseDto toDto(Notice n) {
+        return new NoticeResponseDto(
+                n.getNoticeId(),
+                n.getUserId(),
+                n.getTitle(),
+                n.getContent(),
+                n.getIsPinned(),
+                n.getCity(),
+                n.getDistrict(),
+                n.getCreatedAt(),
+                n.getUpdatedAt()
+        );
     }
 }

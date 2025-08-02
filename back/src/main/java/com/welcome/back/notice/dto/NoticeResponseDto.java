@@ -13,6 +13,8 @@ public class NoticeResponseDto {
     private String title;
     private String content;
     private Boolean isPinned;
+    private String city;
+    private String district;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 }

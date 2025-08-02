@@ -16,14 +16,21 @@ import java.util.List;
 public class NoticeController {
     private final NoticeService noticeService;
 
-    // 공지 목록 조회 & 검색
+    // 공지 목록 조회 & 검색 & 지역 카테고리
     @GetMapping
     public ResponseEntity<List<NoticeResponseDto>> listNotices(
-            @RequestParam(value = "search", required = false) String search
+            @RequestParam(value="search",   required=false) String search,
+            @RequestParam(value="city",     required=false) String city,
+            @RequestParam(value="district", required=false) String district
     ) {
-        List<NoticeResponseDto> list = (search != null && !search.isBlank())
-                ? noticeService.searchNotices(search)
-                : noticeService.getAllNotices();
+        List<NoticeResponseDto> list;
+        if (search != null && !search.isBlank()) {
+            list = noticeService.searchNotices(search);
+        } else if (city != null && district != null && !city.isBlank() && !district.isBlank()) {
+            list = noticeService.getByCityAndDistrict(city, district);
+        } else {
+            list = noticeService.getAllNotices();
+        }
         return ResponseEntity.ok(list);
     }
 

@@ -27,6 +27,12 @@ public class Notice {
     @Column(name = "is_pinned", nullable = false)
     private Boolean isPinned;
 
+    @Column(nullable = false, length = 20)
+    private String city;
+
+    @Column(nullable = false, length = 20)
+    private String district;
+
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 

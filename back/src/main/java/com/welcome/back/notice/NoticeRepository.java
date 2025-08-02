@@ -8,4 +8,5 @@ import java.util.List;
 @Repository
 public interface NoticeRepository extends JpaRepository<Notice, Long> {
     List<Notice> findByTitleContainingIgnoreCaseOrContentContainingIgnoreCase(String titleKeyword, String contentKeyword);
+    List<Notice> findAllByCityAndDistrictOrderByCreatedAtDesc(String city, String district);
 }
