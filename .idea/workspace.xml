@@ -4,55 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03166256-85bd-4f67-9029-3fe10a0837ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/welcome/back/users/entity/Users.java" afterDir="false" />
+    <list default="true" id="03166256-85bd-4f67-9029-3fe10a0837ca" name="Changes" comment="feat: chatbot &#10;- Gemini api 연동">
+      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/welcome/back/chatBot/ChatBotController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/welcome/back/chatBot/ChatBotService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WelcomeForestVillage.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/App.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/react-app-env.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/reportWebVitals.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/setupTests.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/src/setupTests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/untitled/untitled.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/back/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,26 +25,29 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+    <projectState path="$PROJECT_DIR$/back">
+      <ProjectState />
+    </projectState>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "rma4921"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;rma4921&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/rma4921/WelcomeForestVillage.git",
-    "accountId": "ed852c49-464f-4c89-951b-2cb5327edfef"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/rma4921/WelcomeForestVillage.git&quot;,
+    &quot;accountId&quot;: &quot;ed852c49-464f-4c89-951b-2cb5327edfef&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 4
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="30XREO7x3flQiUszRkS3On80HZq" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -90,24 +55,37 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.Build WelcomeForestVillage.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature/init-setup",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.BackApplication.executor": "Run",
+    "git-widget-placeholder": "feature/chatbot",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/rmaqh/IdeaProjects/WelcomeForestVillage/front",
+    "last_opened_file_path": "C:/Users/juhak/IdeaProjects/WelcomeForestVillage/back/src/main/java/com/welcome/back",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JavaScript Debug.Debug Application">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\juhak\IdeaProjects\WelcomeForestVillage\back\src\main\java\com\welcome\back" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.BackApplication">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -127,6 +105,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="Spring Boot.BackApplication" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -150,5 +132,32 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="feature/chatbot" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: chatbot &#10;- Gemini api 연동" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: chatbot &#10;- Gemini api 연동" />
   </component>
 </project>
