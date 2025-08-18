@@ -45,24 +45,43 @@ function TopNav() {
                     이장의숲
                 </div>
 
-                <Menu className="w-7 h-7 block md:hidden cursor-pointer"/>
+                <div className="dropdown dropdown-end">
+                    <Menu tabIndex={0} role="button" className="w-7 h-7 block md:hidden cursor-pointer"/>
 
-                {menuData.map((item) => (
+                    <ul tabIndex={0}
+                        className="dropdown-content menu bg-white text-black rounded-box z-10 w-52 p-2 shadow-sm">
+
+                        {menuData.map((menu) => (
+                            <li key={menu.title}>
+                                <h2 className="menu-title">{menu.title}</h2>
+                                <ul>
+                                    {menu.links.map((link) => (
+                                        <li key={link.label}>
+                                            <Link to={link.to}>{link.label}</Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                {menuData.map((menu) => (
                     <div
-                        key={item.title}
+                        key={menu.title}
                         className="hidden md:inline text-xl font-bold"
-                        onMouseEnter={() => setHovered(item.title)}
+                        onMouseEnter={() => setHovered(menu.title)}
                     >
-                        <span className="cursor-pointer">{item.title}</span>
+                        <span className="cursor-pointer">{menu.title}</span>
 
-                        {hovered === item.title && (
+                        {hovered === menu.title && (
                             <div
                                 className="absolute top-25 left-0 w-full h-[150px] bg-white z-0 border-t-2 border-gray-200 flex justify-center items-center"
-                                onMouseEnter={() => setHovered(item.title)}
+                                onMouseEnter={() => setHovered(menu.title)}
                                 onMouseLeave={() => setHovered(null)}
                             >
                                 <div className="flex justify-evenly w-full items-center ">
-                                    {item.links.map((link) => (
+                                    {menu.links.map((link) => (
                                         <Link key={link.label} to={link.to}>
                                             <div className="h-25 w-50">
                                                 <p className="font-normal text-lg">{link.label}</p>
