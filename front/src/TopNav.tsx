@@ -35,9 +35,9 @@ function TopNav() {
     ];
 
     return (
-        <div className="absolute w-full">
+        <div className="absolute w-full z-10">
             <div
-                className={`flex justify-between items-center h-25 p-5 z-10 ${hovered ? "bg-white text-black" : "bg-transparent text-white"}`}>
+                className={`flex justify-between items-center h-25 p-5 ${hovered ? "bg-white text-black" : "bg-transparent text-white"}`}>
                 {/* 로고 */}
                 <div className="text-xl font-bold">
                     모여봐요
