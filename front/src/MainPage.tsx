@@ -1,5 +1,5 @@
 import TopNav from "@/TopNav.tsx";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 function MainPage() {
     const navigate = useNavigate();
@@ -10,9 +10,77 @@ function MainPage() {
         {label: "마을의 장점은 뭐야?", to: "/"}
     ];
 
+    type CustomPolicyData = {
+        title: string;
+        imgUrl: string;
+        content: string;
+        to: string;
+    }
+
+    type NewPolicyData = {
+        title: string;
+        imgUrl: string;
+        content: string;
+        to: string;
+    }
+
+    const customPolicyData: CustomPolicyData[] = [
+        {
+            title: "Custom Title 1",
+            imgUrl: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+            content: "1 A card component has a figure, a body part, and inside body there are title and actions parts",
+            to: "/"
+        },
+        {
+            title: "Custom Title 2",
+            imgUrl: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+            content: "2 A card component has a figure, a body part, and inside body there are title and actions parts",
+            to: "/"
+        },
+        {
+            title: "Custom Title 3",
+            imgUrl: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+            content: "3 A card component has a figure, a body part, and inside body there are title and actions parts",
+            to: "/"
+        },
+        {
+            title: "Custom Title 3",
+            imgUrl: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+            content: "3 A card component has a figure, a body part, and inside body there are title and actions parts",
+            to: "/"
+        }
+    ]
+
+    const NewPolicyData: NewPolicyData[] = [
+        {
+            title: "New Title 1",
+            imgUrl: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+            content: "1 A card component has a figure, a body part, and inside body there are title and actions parts",
+            to: "/"
+        },
+        {
+            title: "New Title 2",
+            imgUrl: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+            content: "2 A card component has a figure, a body part, and inside body there are title and actions parts",
+            to: "/"
+        },
+        {
+            title: "New Title 3",
+            imgUrl: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+            content: "3 A card component has a figure, a body part, and inside body there are title and actions parts",
+            to: "/"
+        },
+        {
+            title: "New Title 3",
+            imgUrl: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+            content: "3 A card component has a figure, a body part, and inside body there are title and actions parts",
+            to: "/"
+        }
+    ]
+
     return (
         <div>
-            <div className="w-full relative h-[700px] flex justify-center">
+            <div className="w-full relative h-[700px] flex justify-center mb-15">
                 <TopNav/>
                 <img src="/이장의숲데스크탑배경.png" alt="배경" className="w-full object-cover hidden md:block"/>
                 <img src="/이장의숲모바일배경.png" alt="배경" className="w-full object-cover md:hidden"/>
@@ -24,7 +92,7 @@ function MainPage() {
                     <button
                         key={idx}
                         className="btn btn-soft absolute left-10 lg:left-50"
-                        style={{ top: `${275 + idx * 50}px` }}
+                        style={{top: `${275 + idx * 50}px`}}
                         onClick={() => navigate(item.to)}
                     >
                         {item.label}
@@ -37,8 +105,58 @@ function MainPage() {
                     챗봇 바로가기
                 </button>
             </div>
-
-
+            <div className="mx-15 mb-15">
+                <span className="font-semibold text-lg">맞춤 추천 정책</span>
+                <div className="flex justify-center flex-wrap m-10">
+                    {customPolicyData.map((customPolicy) => (
+                        <Link to={customPolicy.to}>
+                            <div
+                                className="card bg-base-100 w-80 h-90 shadow-sm flex flex-col mx-5 mb-10 md:w-56 md:h-68">
+                                <figure className="flex-[2]">
+                                    <img
+                                        src={customPolicy.imgUrl}
+                                        alt={customPolicy.title}
+                                        className="object-cover w-full h-full"/>
+                                </figure>
+                                <div className="card-body flex-[1]">
+                                    <h2 className="card-title line-clamp-1">
+                                        {customPolicy.title}
+                                    </h2>
+                                    <p className="line-clamp-2">
+                                        {customPolicy.content}
+                                    </p>
+                                </div>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
+            </div>
+            <div className="mx-15 mb-15">
+                <span className="font-semibold text-lg">새로운 정책</span>
+                <div className="flex justify-center flex-wrap m-10">
+                    {NewPolicyData.map((NewPolicy) => (
+                        <Link to={NewPolicy.to}>
+                            <div
+                                className="card bg-base-100 w-80 h-90 shadow-sm flex flex-col mx-5 mb-10 md:w-56 md:h-68">
+                                <figure className="flex-[2]">
+                                    <img
+                                        src={NewPolicy.imgUrl}
+                                        alt={NewPolicy.title}
+                                        className="object-cover w-full h-full"/>
+                                </figure>
+                                <div className="card-body flex-[1]">
+                                    <h2 className="card-title line-clamp-1">
+                                        {NewPolicy.title}
+                                    </h2>
+                                    <p className="line-clamp-2">
+                                        {NewPolicy.content}
+                                    </p>
+                                </div>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
+            </div>
         </div>
     )
 }
