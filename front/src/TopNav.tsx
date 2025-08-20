@@ -38,15 +38,12 @@ function TopNav() {
         <div className="absolute w-full z-10">
             <div
                 className={`flex justify-between items-center h-25 p-5 ${hovered ? "bg-white text-black" : "bg-transparent text-white"}`}>
-                {/* 로고 */}
-                <div className="text-xl font-bold">
-                    모여봐요
-                    <br/>
-                    이장의숲
-                </div>
+                <Link to="/" className="w-[100px]">
+                    <img src="/모여봐요이장의숲.png" alt="로고"/>
+                </Link>
 
-                <div className="dropdown dropdown-end">
-                    <Menu tabIndex={0} role="button" className="w-7 h-7 block md:hidden cursor-pointer"/>
+                <div className="dropdown dropdown-end md:hidden">
+                    <Menu tabIndex={0} role="button" className="w-7 h-7 block cursor-pointer"/>
 
                     <ul tabIndex={0}
                         className="dropdown-content menu bg-white text-black rounded-box z-10 w-52 p-2 shadow-sm">
