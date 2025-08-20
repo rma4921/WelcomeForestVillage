@@ -1,9 +1,10 @@
 import {Menu} from "lucide-react";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 
 function TopNav() {
     const [hovered, setHovered] = useState<string | null>(null);
+    const [scrolled, setScrolled] = useState(false);
 
     type MenuLink = {
         label: string;
@@ -34,10 +35,23 @@ function TopNav() {
         },
     ];
 
+    useEffect(() => {
+        const scrollY0 = () => {
+            setScrolled(window.scrollY < 0);
+        }
+        scrollY0();
+        window.addEventListener("scroll", scrollY0);
+
+        return () => {
+            window.removeEventListener("scroll", scrollY0);
+        }
+    }, [])
+
     return (
-        <div className="absolute w-full z-10">
+        <div className="fixed top-0 left-0 w-full z-10">
             <div
-                className={`flex justify-between items-center h-25 p-5 ${hovered ? "bg-white text-black" : "bg-transparent text-white"}`}>
+                className={`flex justify-between items-center h-25 p-5 transition-colors duration-300
+                ${hovered || scrolled ? "bg-white text-black border-b-2 border-gray-200" : "bg-transparent text-white"}`}>
                 <Link to="/" className="w-[100px]">
                     <img src="/모여봐요이장의숲.png" alt="로고"/>
                 </Link>
@@ -71,9 +85,9 @@ function TopNav() {
                     >
                         <span className="cursor-pointer">{menu.title}</span>
 
-                        {hovered === menu.title && (
                             <div
-                                className="absolute top-25 left-0 w-full h-[150px] bg-white z-0 border-t-2 border-gray-200 flex justify-center items-center"
+                                className={`absolute top-25 left-0 w-full h-[150px] bg-white z-0 transition-opacity duration-300 flex justify-center items-center
+                                ${hovered === menu.title ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
                                 onMouseEnter={() => setHovered(menu.title)}
                                 onMouseLeave={() => setHovered(null)}
                             >
@@ -88,7 +102,6 @@ function TopNav() {
                                     ))}
                                 </div>
                             </div>
-                        )}
                     </div>
                 ))}
 
