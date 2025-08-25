@@ -1,8 +1,11 @@
 import TopNav from "@/TopNav.tsx";
 import {Link, useNavigate} from "react-router-dom";
+import Setting from "@/Setting.tsx";
+import {useState} from "react";
 
 function MainPage() {
     const navigate = useNavigate();
+    const [zoom, setZoom] = useState(1);
 
     const buttons = [
         {label: "마을 최근 행사는 뭐야?", to: "/"},
@@ -79,7 +82,7 @@ function MainPage() {
     ]
 
     return (
-        <div>
+        <div style={{zoom}}>
             <div className="w-full relative h-[700px] flex justify-center mb-15">
                 <TopNav/>
                 <img src="/이장의숲데스크탑배경.png" alt="배경" className="w-full object-cover hidden md:block"/>
@@ -157,6 +160,7 @@ function MainPage() {
                     ))}
                 </div>
             </div>
+            <Setting onZoomChange={setZoom}/>
         </div>
     )
 }
