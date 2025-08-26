@@ -47,7 +47,7 @@ function MainPage() {
             to: "/"
         },
         {
-            title: "Custom Title 3",
+            title: "Custom Title 4",
             imgUrl: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
             content: "3 A card component has a figure, a body part, and inside body there are title and actions parts",
             to: "/"
@@ -74,7 +74,7 @@ function MainPage() {
             to: "/"
         },
         {
-            title: "New Title 3",
+            title: "New Title 4",
             imgUrl: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
             content: "3 A card component has a figure, a body part, and inside body there are title and actions parts",
             to: "/"
@@ -112,7 +112,7 @@ function MainPage() {
                 <span className="font-semibold text-lg">맞춤 추천 정책</span>
                 <div className="flex justify-center flex-wrap m-10">
                     {customPolicyData.map((customPolicy) => (
-                        <Link to={customPolicy.to}>
+                        <Link key={customPolicy.title} to={customPolicy.to}>
                             <div
                                 className="card bg-base-100 w-80 h-90 shadow-sm flex flex-col mx-5 mb-10 md:w-56 md:h-68">
                                 <figure className="flex-[2]">
@@ -138,7 +138,7 @@ function MainPage() {
                 <span className="font-semibold text-lg">새로운 정책</span>
                 <div className="flex justify-center flex-wrap m-10">
                     {NewPolicyData.map((NewPolicy) => (
-                        <Link to={NewPolicy.to}>
+                        <Link key={NewPolicy.title} to={NewPolicy.to}>
                             <div
                                 className="card bg-base-100 w-80 h-90 shadow-sm flex flex-col mx-5 mb-10 md:w-56 md:h-68">
                                 <figure className="flex-[2]">
