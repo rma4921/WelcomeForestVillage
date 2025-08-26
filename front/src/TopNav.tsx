@@ -37,7 +37,7 @@ function TopNav() {
 
     useEffect(() => {
         const scrollY0 = () => {
-            setScrolled(window.scrollY < 0);
+            setScrolled(window.scrollY > 0);
         }
         scrollY0();
         window.addEventListener("scroll", scrollY0);
