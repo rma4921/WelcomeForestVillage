@@ -51,24 +51,25 @@ function TopNav() {
         <div className="fixed top-0 left-0 w-full z-10">
             <div
                 className={`flex justify-between items-center h-25 p-5 transition-colors duration-300
-                ${hovered || scrolled ? "bg-white text-black border-b-2 border-gray-200" : "bg-transparent text-white"}`}>
+                ${hovered || scrolled ? "bg-base-100 text-base-content border-b-2 border-base-300" : "bg-transparent text-white"}`}>
                 <Link to="/" className="w-[100px]">
                     <img src="/모여봐요이장의숲.png" alt="로고"/>
                 </Link>
 
+                {/*모바일 버전*/}
                 <div className="dropdown dropdown-end md:hidden">
                     <Menu tabIndex={0} role="button" className="w-7 h-7 block cursor-pointer"/>
 
                     <ul tabIndex={0}
-                        className="dropdown-content menu bg-white text-black rounded-box z-10 w-52 p-2 shadow-sm">
+                        className="dropdown-content menu bg-base-100 text-black rounded-box z-10 w-52 p-2 shadow-sm">
 
                         {menuData.map((menu) => (
                             <li key={menu.title}>
-                                <h2 className="menu-title">{menu.title}</h2>
+                                <h2 className="menu-title text-base-content">{menu.title}</h2>
                                 <ul>
                                     {menu.links.map((link) => (
                                         <li key={link.label}>
-                                            <Link to={link.to}>{link.label}</Link>
+                                            <Link to={link.to} className="text-base-content">{link.label}</Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -77,16 +78,17 @@ function TopNav() {
                     </ul>
                 </div>
 
+                {/*데스크탑 버전*/}
                 {menuData.map((menu) => (
                     <div
                         key={menu.title}
                         className="hidden md:inline text-xl font-bold"
                         onMouseEnter={() => setHovered(menu.title)}
                     >
-                        <span className="cursor-pointer">{menu.title}</span>
+                        <span className="cursor-pointer ">{menu.title}</span>
 
                             <div
-                                className={`absolute top-25 left-0 w-full h-[150px] bg-white z-0 transition-opacity duration-300 flex justify-center items-center
+                                className={`absolute top-25 left-0 w-full h-[150px] bg-base-100 z-0 transition-opacity duration-300 flex justify-center items-center
                                 ${hovered === menu.title ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
                                 onMouseEnter={() => setHovered(menu.title)}
                                 onMouseLeave={() => setHovered(null)}
@@ -96,7 +98,7 @@ function TopNav() {
                                         <Link key={link.label} to={link.to}>
                                             <div className="h-25 w-50">
                                                 <p className="font-normal text-lg">{link.label}</p>
-                                                <p className="pt-2 text-sm border-t border-gray-400 font-normal text-lg">{link.desc}</p>
+                                                <p className="pt-2 text-sm border-t border-base-300 font-normal text-lg">{link.desc}</p>
                                             </div>
                                         </Link>
                                     ))}

@@ -82,7 +82,7 @@ function MainPage() {
     ]
 
     return (
-        <div style={{zoom}}>
+        <div style={{zoom}} className="bg-base-100">
             <div className="w-full relative h-[700px] flex justify-center mb-15">
                 <TopNav/>
                 <img src="/이장의숲데스크탑배경.png" alt="배경" className="w-full object-cover hidden md:block"/>
@@ -109,12 +109,12 @@ function MainPage() {
                 </button>
             </div>
             <div className="mx-15 mb-15">
-                <span className="font-semibold text-lg">맞춤 추천 정책</span>
+                <span className="font-semibold text-lg text-base-content">맞춤 추천 정책</span>
                 <div className="flex justify-center flex-wrap m-10">
                     {customPolicyData.map((customPolicy) => (
                         <Link key={customPolicy.title} to={customPolicy.to}>
                             <div
-                                className="card bg-base-100 w-80 h-90 shadow-sm flex flex-col mx-5 mb-10 md:w-56 md:h-68">
+                                className="card bg-base-300 w-80 h-90 shadow-sm flex flex-col mx-5 mb-10 md:w-56 md:h-68">
                                 <figure className="flex-[2]">
                                     <img
                                         src={customPolicy.imgUrl}
@@ -122,10 +122,10 @@ function MainPage() {
                                         className="object-cover w-full h-full"/>
                                 </figure>
                                 <div className="card-body flex-[1]">
-                                    <h2 className="card-title line-clamp-1">
+                                    <h2 className="card-title line-clamp-1 text-base-content">
                                         {customPolicy.title}
                                     </h2>
-                                    <p className="line-clamp-2">
+                                    <p className="line-clamp-2 text-base-content">
                                         {customPolicy.content}
                                     </p>
                                 </div>
@@ -135,12 +135,12 @@ function MainPage() {
                 </div>
             </div>
             <div className="mx-15 mb-15">
-                <span className="font-semibold text-lg">새로운 정책</span>
+                <span className="font-semibold text-lg text-base-content">새로운 정책</span>
                 <div className="flex justify-center flex-wrap m-10">
                     {NewPolicyData.map((NewPolicy) => (
                         <Link key={NewPolicy.title} to={NewPolicy.to}>
                             <div
-                                className="card bg-base-100 w-80 h-90 shadow-sm flex flex-col mx-5 mb-10 md:w-56 md:h-68">
+                                className="card bg-base-300 w-80 h-90 shadow-sm flex flex-col mx-5 mb-10 md:w-56 md:h-68">
                                 <figure className="flex-[2]">
                                     <img
                                         src={NewPolicy.imgUrl}
@@ -148,10 +148,10 @@ function MainPage() {
                                         className="object-cover w-full h-full"/>
                                 </figure>
                                 <div className="card-body flex-[1]">
-                                    <h2 className="card-title line-clamp-1">
+                                    <h2 className="card-title line-clamp-1 text-base-content">
                                         {NewPolicy.title}
                                     </h2>
-                                    <p className="line-clamp-2">
+                                    <p className="line-clamp-2 text-base-content">
                                         {NewPolicy.content}
                                     </p>
                                 </div>
